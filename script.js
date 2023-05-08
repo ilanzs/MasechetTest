@@ -23,7 +23,7 @@ let SubmitMasechet = () => {
     let sentenceIndex = Math.floor(Math.random() * sentences.length);
     let sentence = sentences.slice(sentenceIndex, sentenceIndex + 2).join(".");
     if (sentence.split(" ").length > 35) {
-      sentence = sentences[sentenceIndex];
+      sentence = sentence.split(" ").slice(0, 35).join(" ");
     }
 
     document.querySelector("#before").style.visibility = "hidden";
