@@ -27,6 +27,8 @@ let SubmitMasechet = () => {
     let sentence = sentences.slice(sentenceIndex, sentenceIndex + 2).join(".");
     if (sentence.split(" ").length > 35) {
       sentence = sentence.split(" ").slice(0, 35).join(" ");
+    } else if (sentence.split(" ").length < 7) {
+      sentence = sentences.slice(sentenceIndex, sentenceIndex + 3);
     }
 
     document.querySelector("#before").style.visibility = "hidden";
@@ -47,4 +49,9 @@ let back = () => {
     document.querySelector("#before").style.visibility = 'visible';
     document.querySelector("#after").style.visibility = 'hidden';
     document.querySelector("#answer").style.visibility = 'hidden';
+}
+
+let again = () => {
+  SubmitMasechet();
+  document.querySelector("#answer").style.visibility = 'hidden';
 }
