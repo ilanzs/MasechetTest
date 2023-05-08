@@ -1,5 +1,14 @@
 * {
     direction: rtl;
+    font-size: 1.3rem;
+}
+
+button {
+    border-radius: 10px;
+}
+
+select {
+    border-radius: 10px;
 }
 
 #before {
