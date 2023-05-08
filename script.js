@@ -2,8 +2,6 @@ async function getSentence(masechet, daf, amud) {
   let response = await fetch(
     `https://www.sefaria.org/api/texts/${masechet}.${daf}${amud}`
   );
-  console.log(`https://www.sefaria.org/api/texts/${masechet}.${daf}.${amud}`)
-  // let response = await fetch("https://www.sefaria.org/api/texts/Yoma.2.a");
   let data = await response.json();
   return data;
 }
@@ -27,6 +25,9 @@ let SubmitMasechet = () => {
     let sentences = newData.split(".");
     let sentenceIndex = Math.floor(Math.random() * sentences.length);
     let sentence = sentences.slice(sentenceIndex, sentenceIndex + 2).join(".");
+    if (sentence.split(" ").length > 35) {
+      sentence = sentences[sentenceIndex];
+    }
 
     document.querySelector("#before").style.visibility = "hidden";
     document.querySelector("#after").style.visibility = "visible";
