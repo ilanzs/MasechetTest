@@ -19,6 +19,9 @@ let SubmitMasechet = () => {
     daf = 2;
   }
   amud = Math.random() > 0.5 ? "a" : "b";
+  if (masechet == "Tamid") {
+    daf += 34;
+  }
 
   getSentence(masechet, daf, amud).then((data) => {
     let newData = data.he.join("");
