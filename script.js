@@ -17,9 +17,6 @@ let SubmitMasechet = () => {
   daf = Math.floor(Math.random() * pages);
   amud = Math.random() > 0.5 ? "a" : "b";
 
-  console.log(daf);
-  console.log(amud);
-
   getSentence(masechet, daf, amud).then((data) => {
     let newData = data.he.join("");
     let sentences = newData.split(".");
