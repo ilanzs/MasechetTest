@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gmara Daf test</title>
+  </head>
+  <body>
+    <div id="before">
+      <label for="masechet">בחירת מסכת:</label>
+      <select name="masechet" id="masechtot">
+        <option value="Berakhot 63">ברכות</option>
+        <option value="Shabbat 156">שבת</option>
+        <option value="Eruvin 104">עירובין</option>
+        <option value="Pesachim 120">פסחים</option>
+        <option value="Rosh_Hashanah 34">ראש השנה</option>
+        <option value="Yoma 87">יומא</option>
+        <option value="Sukkah 55">סוכה</option>
+        <option value="Beitzah 39">ביצה</option>
+        <option value="Taanit 30">תענית</option>
+        <option value="Megillah 31">מגילה</option>
+        <option value="Moed_Katan 28">מועד קטן</option>
+        <option value="Chagigah 26">חגיגה</option>
+        <option value="Yevamot 121">יבמות</option>
+        <option value="Ketubot 111">כתובות</option>
+        <option value="Nedarim 90">נדרים</option>
+        <option value="Nazir 65">נזיר</option>
+        <option value="Sotah 48">סוטה</option>
+        <option value="Gittin 89">גיטין</option>
+        <option value="Kiddushin 81">קידושין</option>
+        <option value="Bava_Kamma 118">בבא קמא</option>
+        <option value="Bava_Metzia 118">בבא מציעא</option>
+        <option value="Bava_Batra 175">בבא בתרא</option>
+        <option value="Sanhedrin 112">סנהדרין</option>
+        <option value="Makkot 23">מכות</option>
+        <option value="Shevuot 48">שבועות</option>
+        <option value="Avodah_Zarah 75">עבודה זרה</option>
+        <option value="Horayot 13">הוריות</option>
+        <option value="Zevachim 119">זבחים</option>
+        <option value="Menachot 109">מנחות</option>
+        <option value="Chullin 141">חולין</option>
+        <option value="Bekhorot 60">בכורות</option>
+        <option value="Arakhin 33">ערכין</option>
+        <option value="Temurah 33">תמורה</option>
+        <option value="Keritot 27">כריתות</option>
+        <option value="Meilah 20">מעילה</option>
+        <option value="Tamid 9">תמיד</option>
+        <option value="Niddah 72">נדה</option>
+      </select>
+      <button onclick="SubmitMasechet()">בחר</button>
+    </div>
+
+    <div id="after">
+      <div id="gmara"></div>
+      <button id="show" onclick="show()">תשובה</button>
+    </div>
+
+    <div id="answer">
+        <h1 id="answerh1"></h1>
+        <button onclick="back()">חזרה</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="gematriya.js"></script>
+  </body>
+</html>

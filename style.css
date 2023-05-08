@@ -1,0 +1,16 @@
+* {
+    direction: rtl;
+}
+
+#before {
+    position: absolute;
+}
+
+#after {
+    visibility: hidden;
+    position: static;
+}
+
+#answer {
+    visibility: hidden;
+}
