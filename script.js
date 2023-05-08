@@ -15,6 +15,9 @@ let SubmitMasechet = () => {
   let pages = value[1];
 
   daf = Math.floor(Math.random() * pages);
+  if (daf == 1) {
+    daf = 2;
+  }
   amud = Math.random() > 0.5 ? "a" : "b";
 
   getSentence(masechet, daf, amud).then((data) => {
