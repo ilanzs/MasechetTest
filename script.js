@@ -27,31 +27,31 @@ let SubmitMasechet = () => {
     let sentence = sentences.slice(sentenceIndex, sentenceIndex + 2).join(".");
     if (sentence.split(" ").length > 35) {
       sentence = sentence.split(" ").slice(0, 35).join(" ");
-    } else if (sentence.split(" ").length < 7) {
+    } else if (sentence.split(" ").length < 10) {
       sentence = sentences.slice(sentenceIndex, sentenceIndex + 3);
     }
 
-    document.querySelector("#before").style.visibility = "hidden";
-    document.querySelector("#after").style.visibility = "visible";
+    document.querySelector("#answer").style.display = 'none';
+    document.querySelector("#before").style.display = "none";
+    document.querySelector("#after").style.display = "inline";
     document.querySelector("#gmara").innerHTML = sentence;
-    document.querySelector("#show").style.visibility = "visible";
+    document.querySelector("#show").style.display = "inline";
   });
 };
 
 let show = () => {
-    document.querySelector("#show").style.visibility = 'hidden';
-    document.querySelector("#answer").style.visibility = 'visible'
-    document.querySelector("#answerh1").innerHTML = `דף ${gematriya(daf, {punctuate: false})}${amud == "a" ? "." : ":"}`;
+    document.querySelector("#show").style.display = 'none';
+    document.querySelector("#answer").style.display = 'inline'
+    document.querySelector("#answerh1").innerHTML = `<a href="https://www.sefaria.org.il/${masechet}.${daf}${amud}" target="_blank">דף ${gematriya(daf, {punctuate: false})}${amud == "a" ? "." : ":"}</a>`;
 }
 
 
 let back = () => {
-    document.querySelector("#before").style.visibility = 'visible';
-    document.querySelector("#after").style.visibility = 'hidden';
-    document.querySelector("#answer").style.visibility = 'hidden';
+    document.querySelector("#before").style.display = 'inline';
+    document.querySelector("#after").style.display = 'none';
+    document.querySelector("#answer").style.display = 'none';
 }
 
 let again = () => {
   SubmitMasechet();
-  document.querySelector("#answer").style.visibility = 'hidden';
 }

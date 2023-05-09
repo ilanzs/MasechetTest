@@ -1,6 +1,12 @@
 * {
     direction: rtl;
     font-size: 1.3rem;
+    text-align: center;
+    /* margin: 10px; */
+}
+
+:root {
+    --font-size: 1rem;
 }
 
 button {
@@ -11,15 +17,33 @@ select {
     border-radius: 10px;
 }
 
-#before {
-    position: absolute;
+hr {
+    margin-bottom: 25px;
 }
 
+.thanks {
+    position:absolute;
+    font-size: var(--font-size);
+    width: 300px;
+    margin: 10px;
+    margin-left:-150px;
+    bottom:0px;
+    left:50%;
+}
+
+.thanks-link {
+    font-size: var(--font-size);
+}
+
+
+
 #after {
-    visibility: hidden;
-    position: static;
+    /* visibility: hidden; */
+    display: none;
 }
 
 #answer {
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
 }
+
