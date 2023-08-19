@@ -11,13 +11,22 @@ let amud;
 
 let SubmitMasechet = () => {
   let value = document.querySelector("#masechtot").value.split(" ");
+  let midaf = gematriyaLettersToNumbers(document.querySelector("#midaf").value);
+  let adDaf = gematriyaLettersToNumbers(document.querySelector("#ad-daf").value)+1;
+
   masechet = value[0];
   let pages = value[1];
 
-  daf = Math.floor(Math.random() * pages);
+
+
+  
+// Math. random() * (max-min) + min);
+  daf = Math.floor(Math.random() * (adDaf-midaf) + midaf)
   if (daf == 1) {
     daf = 2;
   }
+
+  console.log(daf)
   amud = Math.random() > 0.5 ? "a" : "b";
 
   getSentence(masechet, daf, amud).then((data) => {
@@ -42,7 +51,7 @@ let SubmitMasechet = () => {
 let show = () => {
     document.querySelector("#show").style.display = 'none';
     document.querySelector("#answer").style.display = 'inline'
-    document.querySelector("#answerh1").innerHTML = `<a href="https://www.sefaria.org.il/${masechet}.${daf}${amud}" target="_blank">דף ${gematriya(daf, {punctuate: false})}${amud == "a" ? "." : ":"}</a>`;
+    document.querySelector("#answerh1").innerHTML = `<a href="https://www.sefaria.org.il/${masechet}.${daf}${amud}" target="_blank">דף ${gematriyaNumToLetters(daf, {punctuate: false})}${amud == "a" ? "." : ":"}</a>`;
 }
 
 
